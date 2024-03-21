@@ -8,10 +8,9 @@ Fecha: -/-/2024
 
 ## Descripción del Problema
 
-Este es un proyecto que...
+Este es un proyecto que cuenta las ocurrencias de los símbolos "A", "T", "G" y "C", de una secuencia de ADN que leerá a través de un archivo.
 
-El problema enunciado implica...
-
+El problema enunciado implica leer un archivo de una sola linea, almacenando en un contador el total de cada una de las letras de la secuencia.
 
 ## Especificación de Requisitos
 
@@ -71,7 +70,7 @@ El formato de los datos de entrada será ...
          |   Usuario     |
          +-------+-------+
                  |
-                 | 1. Proporciona datos de entrada
+                 | 1. Proporciona archivo de entrada
                  v
          +-------+-------+
          |               |
