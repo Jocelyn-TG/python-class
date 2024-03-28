@@ -8,7 +8,7 @@ Fecha: 21/03/2024
 
 ## Descripción del Problema
 
-Este es un proyecto que cuenta las ocurrencias de los símbolos "A", "T", "G" y "C", de una secuencia de ADN que leerá a través de un archivo.
+Este es un proyecto que cuenta las ocurrencias de los nucleotidos "A", "T", "G" y "C", de una secuencia de ADN que leerá a través de un archivo.
 
 El problema enunciado implica leer un archivo de una sola  línea, almacenando en un contador el total de cada una de las letras de la secuencia.
 
