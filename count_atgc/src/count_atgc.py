@@ -19,7 +19,7 @@ CATEGORY:
         
 USAGE
 
-    % python programName
+    % count_atgc.py [-h] input_file
     
 
 ARGUMENTS
@@ -41,19 +41,31 @@ METHOD
 '''
 
 # ===========================================================================
+# =                            imports
+# ===========================================================================
+
+import argparse
+
+# ===========================================================================
 # =                            main
 # ===========================================================================
 
 
-# Obtención del archivo
-archivo = input("Por favor, introduce el nombre del archivo que contiene la secuencia de ADN: ")
+parser = argparse.ArgumentParser(description="Lee archivo de entrada")
 
-# Abre el archivo
+# Agrega un argumento posicional para el archivo de entrada. 
+parser.add_argument("input_file", type=str, 
+			help="El archivo de texto que quieres procesar.")
+
+args = parser.parse_args()
+
+# Abre el archivo y guarda su contenido en la variable secuencia.
 try:
-    with open(archivo, "r") as arch:
-        secuencia = arch.read().upper()        
+    with open(args.input_file, "r") as arch:
+        secuencia = arch.read().upper().strip()       
 except FileNotFoundError:
-    print(f"Error: No se encontró el archivo '{archivo}'.")
+    print(f"Error: No se encontró el archivo '{args.input_file}'.")
+    exit(1)
 
 # Hace el conteo 
 conteo = {'A': 0, 'C': 0, 'G': 0, 'T': 0}
@@ -63,4 +75,3 @@ for nucleotido in secuencia:
 # Imprime los resultados
 for nucleotido, total in conteo.items():
     print(f"{nucleotido}: {total}")
-
