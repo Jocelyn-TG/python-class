@@ -19,20 +19,20 @@ CATEGORY:
         
 USAGE
 
-    % count_atgc.py [-h] input_file
+    % count_atgc.py [-h] [-n NUCLEOTIDES [NUCLEOTIDES ...]] input_file
     
-
 ARGUMENTS
 
     archivo(str): Archivo que contiene la cadena para realizar el conteo.
-
 
 METHOD
 
     El método utilizado en el código anterior es un enfoque simple para contar 
     los nucleótidos (A, C, G, T) en una secuencia de ADN contenida en un archivo 
     de texto. A continuación, describiré brevemente cada parte del método:
-        1.- Obtención del nombre del archivo.
+        1.- Obtención del nombre del archivo desde linea de comando.
+            1.1.- (Opcional) Obtencion de los nucleotidos de los cuales se 
+                  imprimira su total de apariciones.
         2.- Apertura del archivo.
         3.- Lectura de la secuencia de ADN.
         4.- Conteo de nucleótidos.
@@ -57,6 +57,9 @@ parser = argparse.ArgumentParser(description="Lee archivo de entrada")
 parser.add_argument("input_file", type=str, 
 			help="El archivo de texto que quieres procesar.")
 
+# Agrega un argumento opcional los nucleotidos de los cuales quieras observar su total de apariciones.
+parser.add_argument("-n", "--nucleotides", nargs="+", default=["A","C","G","T"],
+			help="Total de apariciones de nucleotidos introducidos (default = A,C,G,T).")
 args = parser.parse_args()
 
 # Abre el archivo y guarda su contenido en la variable secuencia.
@@ -73,5 +76,8 @@ for nucleotido in secuencia:
     conteo[nucleotido] += 1 
 
 # Imprime los resultados
-for nucleotido, total in conteo.items():
-    print(f"{nucleotido}: {total}")
+for nucleotido in args.nucleotides:
+    if nucleotido.upper() not in conteo:
+        print(f"{nucleotido} no es un desoxirribonucleotido.")
+    else:
+        print(f"{nucleotido.upper()}: {conteo[nucleotido.upper()]}")
