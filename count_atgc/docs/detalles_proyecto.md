@@ -57,20 +57,20 @@ El formato de los datos de entrada será un archivo de una línea, el cual conte
 #### Caso de uso: Contador de ATGC
 
 ```
-         +---------------+
-         |   Usuario     |
-         +-------+-------+
-                 |
-                 | 1. Proporciona archivo de entrada (opcional = nucleotidos a contar).
-                 v
-         +-------+-------+
-		 |               |
-         |  Contador de  |
-	     |  nucleotidos  |
-	     |  en  Archivo  |
-         |   (Sistema)   |
-         |               |
-         +---------------+
+        +---------------+
+        |   Usuario     |
+        +-------+-------+
+                |
+                | 1. Proporciona archivo de entrada (opcional = nucleotidos a contar).
+                v
+        +-------+-------+
+	|               |
+	|  Contador de  |
+	|  nucleotidos  |
+	|  en  Archivo  |
+        |   (Sistema)   |
+        |               |
+        +---------------+
 ```
 
 - **Actor**: Usuario
