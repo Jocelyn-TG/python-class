@@ -1,4 +1,4 @@
-# Nombre del Proyecto/script
+# Contador de Nucleotidos (A,T,G,C)
 
 Este es un script de Python diseñado para contar las ocurrencias de los nucleótidos "A", "T", "G" y "C", de una secuencia de ADN que leerá a través de un archivo.
 
