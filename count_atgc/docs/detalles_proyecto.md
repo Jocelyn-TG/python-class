@@ -44,7 +44,7 @@ Función principal():
         Abrir el archivo.
         Leer la secuencia de nucleotidos.
         Contar cuantas veces se encuentra cada nucleotido en dicha secuencia.
-        Mostrar los resultados (de lo introducido por el usuario o en caso de que no haya introducido nada se mostraran todos los nucleotidos) al usuario.
+        Mostrar los resultados (de los nucleotidos introducidos por el usuario o en caso de que no haya introducido nada se mostraran todos los nucleotidos).
     No encontrar el archivo:
 		Imprimir el error.
     No introducir desoxiribonucleotidos:
