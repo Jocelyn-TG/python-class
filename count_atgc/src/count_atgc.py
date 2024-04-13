@@ -23,7 +23,8 @@ USAGE
     
 ARGUMENTS
 
-    archivo(str): Archivo que contiene la cadena para realizar el conteo.
+    input_file(str): Archivo que contiene la cadena para realizar el conteo.
+    nucleotides(str): Opcional. Nucleotidos de los cuales quieras adquirir el conteo.
 
 METHOD
 
@@ -65,7 +66,10 @@ args = parser.parse_args()
 # Abre el archivo y guarda su contenido en la variable secuencia.
 try:
     with open(args.input_file, "r") as arch:
-        secuencia = arch.read().upper().strip()       
+        secuencia = arch.read().upper().strip()
+    if not secuencia:
+        print("El archivo esta vacio.")
+        exit(1)
 except FileNotFoundError:
     print(f"Error: No se encontró el archivo '{args.input_file}'.")
     exit(1)
@@ -73,11 +77,15 @@ except FileNotFoundError:
 # Hace el conteo 
 conteo = {'A': 0, 'C': 0, 'G': 0, 'T': 0}
 for nucleotido in secuencia:
-    conteo[nucleotido] += 1 
+    if nucleotido not in conteo:
+        print(f"Tu secuencia contiene el caracter: {nucleotido}, el cual no es valido.")
+        exit(1)
+    else:
+        conteo[nucleotido] += 1 
 
 # Imprime los resultados
 for nucleotido in args.nucleotides:
     if nucleotido.upper() not in conteo:
-        print(f"{nucleotido} no es un desoxirribonucleotido.")
+        print(f"{nucleotido} no es un caracter valido.")
     else:
         print(f"{nucleotido.upper()}: {conteo[nucleotido.upper()]}")
