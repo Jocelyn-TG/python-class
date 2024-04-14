@@ -1,4 +1,4 @@
-# Contador de Nucleotidos (A,T,G,C)
+# Contador de Nucleótidos (A,T,G,C)
 
 Este es un script de Python diseñado para contar las ocurrencias de los nucleótidos "A", "T", "G" y "C", de una secuencia de ADN que leerá a través de un archivo.
 
@@ -12,6 +12,7 @@ python count_atgc.py [archivo] -n [nucleotido]
 
 donde `archivo` es el nombre del archivo que contiene la secuencia de ADN. El archivo debe toda la secuencia en una sola línea.
 y donde `nucleotido` es la lista de nucleótidos (ya sea en minúscula, mayúscula o ambos) de los cuales se va a mostrar su total de incidencias, estos deben estar separados uno o mas espacios entre ellos.
+
 ## Salida
 
 El script imprimirá las ocurrencias de los nucleótidos en la consola. 
@@ -42,4 +43,4 @@ Si utiliza este script en su trabajo, por favor cite: [Trujillo, J. (2024) Codig
 
 ## Contáctenos
 
-Si tiene problemas o preguntas, por favor abra un problema en este repositorio o póngase en contacto con nosotros en: [ jocelynt@lcg.unam.mx].
+Si tiene problemas o preguntas, por favor abra un problema en este repositorio o póngase en contacto con nosotros en: [jocelynt@lcg.unam.mx].

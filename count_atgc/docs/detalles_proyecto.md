@@ -1,6 +1,6 @@
-# Nombre del Proyecto
+#  Contador de Nucleotidos (A,T,G,C)
 
-Fecha: 7/03/2024
+Fecha: 14/04/2024
 
 **Participantes**:
 
@@ -17,12 +17,14 @@ El problema enunciado implica leer un archivo de una sola línea, almacenando en
 Requisitos funcionales
 
 - Leer y analizar la secuencia de ADN dado un archivo, ya sea que la secuencia contenida este en mayúsculas o minúsculas (o ambas), además de capturar los nucleótidos de los cuales el usuario quiere imprimir el resultado.
-- Calcular el total de veces que aparece cada nucleótido en dicha secuencia.
-- Desplegar el total calculado (de los nucleótidos introducidos por el usuario) en el formato: 
-		Nucleótido: total de apariciones
+- Calcular y desplegar el total de veces que aparece cada nucleótido en dicha secuencia (de los nucleótidos introducidos por el usuario) en el formato: 
+		Nucleótido: total de apariciones.
+- Detectar si el archivo esta vacío.
 - Producir un mensaje de error si el archivo no existe.
-- Imprimir la siguiente leyenda si el usuario introduce algún otro dato que no sea un desoxirribonucleótido:
-        "Dato introducido por el usuario" no es un desoxirribonucleótido.
+- Mostrar el siguiente mensaje cuando la secuencia tenga un carácter diferente a "A", "T", "G" o "C":
+		Tu secuencia contiene el carácter: (*carácter no valido*), el cual no es valido.
+- Imprimir la siguiente leyenda si el usuario introduce algún otro dato que no sea un caracter valido:
+        "Dato introducido por el usuario" no es un carácter valido.
 
 
 Requisitos no funcionales
@@ -47,8 +49,13 @@ Función principal():
         Mostrar los resultados (de los nucleotidos introducidos por el usuario o en caso de que no haya introducido nada se mostraran todos los nucleotidos).
     No encontrar el archivo:
 		Imprimir el error.
-    No introducir desoxiribonucleotidos:
+	El archivo esta vario:
+		Imprimir el error.
+    Secuencia con caracteres no validos:
         Imprimir los que no caen en esa categoria.
+    Input de nucleotidos no validos:
+	    Imprimir el error.
+    
 ```
 
 El formato de los datos de entrada será un archivo de una línea, el cual contenga la secuencia de nucleótidos, además de manera opcional el usuario puede introducir cuales son los  nucleótidos de los cuales quieras saber su tasa de aparición, separados por un espacio entre cada uno (ya sea estén escritos en mayúsculas, minúsculas o una combinación de ambos), si no se introduce ningún nucleótido se imprimirán los resultados de: A, T, G, C. El archivo puede contener la secuencia ya sea en mayúsculas o en minúsculas. La salida serán unas líneas de texto que muestran el total de veces que aparece cada nucleótido en dicha secuencia, en el formato:
@@ -91,5 +98,12 @@ El formato de los datos de entrada será un archivo de una línea, el cual conte
     Si el nucleótido introducido no es un desoxirribonucleótido:
         1. El sistema muestra un mensaje diciendo que el dato introducido no es un desoxirribonucleótido.
         2. El programa continua.
-                
+    
+    Si la secuencia contiene otros caracteres no validos:
+        1. El sistema muestra un mensaje diciendo que el dato de la secuencia no es un valido.
+        2. Se termina el programa.
+        
+    Si el archivo proporcionado esta vacío:
+		1. El sistema muestra un mensaje de error diciendo que el archivo esta vacío.
+        2. Se termina el programa.
 

@@ -24,31 +24,47 @@ A continuación, presentamos los detalles de los casos de prueba. Cada caso de p
 		G: 6
 		T: 10
 
-### Caso de prueba 2: Comprobación de como se muestran los resultados.
+### Caso de prueba 2: Comprobación del funcionamiento con secuencia de mayúsculas/minúsculas y del requerimiento de nucleótidos específicos.
 
 - Descripción: Verificar que el script puede imprimir solo el resultado de los nucleótidos introducidos por el usuario, sin importar si la secuencia o los datos introducidos por el usuario están completamente escritos en minúsculas o las contienen.
 - Datos de entrada: 
 		Archivo con la siguiente secuencia:
-			"CaGTCAtCGaTCAGCTACGATCAtCAGCTaCGtCATCt".
+			"AAAAaaaaTTTTttttGGGGggggCCCCcccc".
 		En linea de comandos introducir [-n A t] después del nombre del archivo.
 - Resultado esperado: 
-		A: 10 
-		T: 10
+		A: 8
+		T: 8
 
 
 ### Caso de prueba 3: Comprobación de error para cuando el archivo introducido no existe
 - Descripción: Verificar que el script maneja correctamente los archivos no existentes.
 - Datos de entrada: Ruta a un archivo que no existe.
-- Resultado esperado: Error: No se encontró el archivo '{nombre_del_archivo}'.
+- Resultado esperado: 
+		1.- Muestra el mensaje: Error: No se encontró el archivo '{nombre_del_archivo}'.
+		2.- Termina el programa.
 
+### Caso de prueba 4: Comprobación de error para cuando el archivo introducido esta vacío
+- Descripción: Verificar que el script maneja correctamente los archivos vacíos.
+- Datos de entrada: Archivo sin contenido.
+- Resultado esperado: 
+		1.-  Muestra el mensaje: "El archivo esta vacío."
+		2.- Termina el programa.
 
-### Caso de prueba 4: Comprobación de error para nucleótidos no existentes (introducidos por el usuario para obtener su ocurrencia)
-- Descripción: Verificar que el script maneja correctamente los datos que no son desoxirribonucleótidos.
+### Caso de prueba 5: Comprobación de error para cuando el archivo introducido contiene una secuencia con caracteres no validos
+- Descripción: Verificar que el script maneja correctamente los archivos cuya secuencia contiene caracteres no validos.
 - Datos de entrada: 
 		Archivo con la siguiente secuencia:
-			"CaGTCAtCGaTCAGCTACGATCAtCAGCTaCGtCATCt".
+			"AUUGGCCAAAUUGGCCAAAUUGGCCAA".
+- Resultado esperado: 
+		1.- Muestra el mensaje: "Tu secuencia contiene el carácter: {carácter no valido}, el cual no es valido."
+		2.- Termina el programa.
+### Caso de prueba 6: Comprobación de error para caracteres no validos introducidos por el usuario para obtener su ocurrencia
+- Descripción: Verificar que el script maneja correctamente  el input de caracteres no validos al ejecutar el programa.
+- Datos de entrada: 
+		Archivo con la siguiente secuencia:
+			"CAGTCATCGATCAGCTACGATCATCAGCTACGTCATCT".
 		En linea de comandos introducir [-n u A] después del nombre del archivo.
 - Resultado esperado: 
-	1.- "Dato introducido por el usuario" no es un desoxirribonucleótido.    
-	2.- Continua con el programa
-		A: 10 
+		1.- Muestra el mensaje: "Dato introducido por el usuario" no es un desoxirribonucleótido.    
+		2.- Continua con el programa
+			A: 10 
