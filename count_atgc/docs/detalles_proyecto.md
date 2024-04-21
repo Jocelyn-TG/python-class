@@ -1,4 +1,4 @@
-#  Contador de Nucleotidos (A,T,G,C)
+#  Contador de Nucleótidos (A,T,G,C)
 
 Fecha: 14/04/2024
 
@@ -21,10 +21,8 @@ Requisitos funcionales
 		Nucleótido: total de apariciones.
 - Detectar si el archivo esta vacío.
 - Producir un mensaje de error si el archivo no existe.
-- Mostrar el siguiente mensaje cuando la secuencia tenga un carácter diferente a "A", "T", "G" o "C":
-		Tu secuencia contiene el carácter: (*carácter no valido*), el cual no es valido.
-- Imprimir la siguiente leyenda si el usuario introduce algún otro dato que no sea un caracter valido:
-        "Dato introducido por el usuario" no es un carácter valido.
+- Producir un mensaje de error si la secuencia tenga un carácter diferente a "A", "T", "G" o "C":
+- Producir un mensaje de error si el usuario introduce algún otro dato que no sea un carácter valido.
 
 
 Requisitos no funcionales
@@ -43,19 +41,24 @@ Función principal():
     Intentar:
         Obtener el nombre del archivo a travez del usuario.
             (Opcional) Obtencion de los nucleotidos de los cuales se imprimira su total de apariciones.
+	        (Opcional) Comprobar que el argumento de nucleotidos solo contenga caracteres validos.
         Abrir el archivo.
-        Leer la secuencia de nucleotidos.
+        Leer la secuencia de nucleotidos y comprobar:
+	        No este vacio.
+	        Que todos sus caracteres sean caracteres validos
         Contar cuantas veces se encuentra cada nucleotido en dicha secuencia.
         Mostrar los resultados (de los nucleotidos introducidos por el usuario o en caso de que no haya introducido nada se mostraran todos los nucleotidos).
+
+Flujos alternativos(): 
+	Input en argumento nucleotide no valido:
+	    Imprimir el error.
     No encontrar el archivo:
 		Imprimir el error.
 	El archivo esta vario:
 		Imprimir el error.
     Secuencia con caracteres no validos:
-        Imprimir los que no caen en esa categoria.
-    Input de nucleotidos no validos:
-	    Imprimir el error.
-    
+        Imprimir el error.
+     
 ```
 
 El formato de los datos de entrada será un archivo de una línea, el cual contenga la secuencia de nucleótidos, además de manera opcional el usuario puede introducir cuales son los  nucleótidos de los cuales quieras saber su tasa de aparición, separados por un espacio entre cada uno (ya sea estén escritos en mayúsculas, minúsculas o una combinación de ambos), si no se introduce ningún nucleótido se imprimirán los resultados de: A, T, G, C. El archivo puede contener la secuencia ya sea en mayúsculas o en minúsculas. La salida serán unas líneas de texto que muestran el total de veces que aparece cada nucleótido en dicha secuencia, en el formato:
@@ -86,24 +89,26 @@ El formato de los datos de entrada será un archivo de una línea, el cual conte
 - **Flujo principal**:
 
 	1. El actor inicia el sistema proporcionando el archivo de entrada con la secuencia y los nucleótidos a contar.
-	2. El sistema valida la existencia del archivo.
+	2. El sistema valida la existencia del archivo y algunas otras condiciones.
 	3. El sistema calcula el total de veces que aparece cada nucleótidos en dicha secuencia.
 	4. El sistema muestra el resultado.
 	
 - **Flujos alternativos**:
-	Si el archivo proporcionado no existe
+
+	Si el argumento `nucleotides` no cuenta cuenta con los caracteres validos:
+        1. El sistema muestra un mensaje diciendo que el dato introducido no valido.
+        2. Se termina el programa.
+        
+	Si el archivo proporcionado no existe:
 		1. El sistema muestra un mensaje de error diciendo que el archivo no se encuentra.
         2. Se termina el programa.
-
-    Si el nucleótido introducido no es un desoxirribonucleótido:
-        1. El sistema muestra un mensaje diciendo que el dato introducido no es un desoxirribonucleótido.
-        2. El programa continua.
-    
+        
+	Si el archivo proporcionado esta vacío:
+		1. El sistema muestra un mensaje de error diciendo que el archivo esta vacío.
+        2. Se termina el programa.
+        
     Si la secuencia contiene otros caracteres no validos:
         1. El sistema muestra un mensaje diciendo que el dato de la secuencia no es un valido.
         2. Se termina el programa.
         
-    Si el archivo proporcionado esta vacío:
-		1. El sistema muestra un mensaje de error diciendo que el archivo esta vacío.
-        2. Se termina el programa.
 

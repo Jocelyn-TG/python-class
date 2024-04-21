@@ -56,7 +56,7 @@ A continuación, presentamos los detalles de los casos de prueba. Cada caso de p
 		Archivo con la siguiente secuencia:
 			"AUUGGCCAAAUUGGCCAAAUUGGCCAA".
 - Resultado esperado: 
-		1.- Muestra el mensaje: "Tu secuencia contiene el carácter: {carácter no valido}, el cual no es valido."
+		1.- Muestra el mensaje: "Error: Se encontró el carácter: {caracter_introducido}, el cual no es valido."
 		2.- Termina el programa.
 ### Caso de prueba 6: Comprobación de error para caracteres no validos introducidos por el usuario para obtener su ocurrencia
 - Descripción: Verificar que el script maneja correctamente  el input de caracteres no validos al ejecutar el programa.
@@ -65,6 +65,5 @@ A continuación, presentamos los detalles de los casos de prueba. Cada caso de p
 			"CAGTCATCGATCAGCTACGATCATCAGCTACGTCATCT".
 		En linea de comandos introducir [-n u A] después del nombre del archivo.
 - Resultado esperado: 
-		1.- Muestra el mensaje: "Dato introducido por el usuario" no es un desoxirribonucleótido.    
-		2.- Continua con el programa
-			A: 10 
+		1.- Muestra el mensaje: ""Error: Se encontró un argumento el cual no valido."
+		2.- Termina el programa.

@@ -7,11 +7,11 @@ Este es un script de Python diseñado para contar las ocurrencias de los nucleó
 El script acepta un argumento posicional y varios opcionales, siendo el posicional, el nombre del archivo y los opcionales serian los nucleótidos de los cuales quieras conocer su total de apariciones:
 
 ```
-python count_atgc.py [archivo] -n [nucleotido]
+python count_atgc.py [archivo] -n [nucleotides]
 ```
 
 donde `archivo` es el nombre del archivo que contiene la secuencia de ADN. El archivo debe toda la secuencia en una sola línea.
-y donde `nucleotido` es la lista de nucleótidos (ya sea en minúscula, mayúscula o ambos) de los cuales se va a mostrar su total de incidencias, estos deben estar separados uno o mas espacios entre ellos.
+y donde `nucleotides` es la lista de nucleótidos (ya sea en minúscula, mayúscula o ambos) de los cuales se va a mostrar su total de incidencias, estos deben estar separados uno o mas espacios entre ellos.
 
 ## Salida
 
@@ -19,7 +19,7 @@ El script imprimirá las ocurrencias de los nucleótidos en la consola.
 
 ## Control de errores
 
-Si el archivo proporcionado no existe, el script generará un mensaje de error. Del mismo modo, si ingresas como argumento alguna cosa que no sea un desoxirribonucleótido, el script imprimirá una leyenda con un error.
+Si el archivo proporcionado no existe, el script generará un mensaje de error. Del mismo modo, si ingresas como argumento alguna un carácter diferente a "A", "T", "G" o "C", el script imprimirá una leyenda con un error. También se mostraran mensajes de error si el archivo se encuentra vacío o la secuencia de este contenía caracteres no validos.
 
 ## Datos
 
@@ -39,7 +39,7 @@ Este script está disponible bajo la licencia [Apache License]. Consulte el arch
 
 ## Como citar
 
-Si utiliza este script en su trabajo, por favor cite: [Trujillo, J. (2024) Codigo count_atgc. Version 1.0. GitHub: https://github.com/Jocelyn-TG/python-class/tree/main/count_atgc].
+Si utiliza este script en su trabajo, por favor cite: [Trujillo, J. (2024) Codigo count_atgc. Version 1.0.2 GitHub: https://github.com/Jocelyn-TG/python-class/tree/main/count_atgc].
 
 ## Contáctenos
 
